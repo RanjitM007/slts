@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhalaxmi Tele Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-brand">
+            <i class="fas fa-mobile-alt"></i>
+            <h1>Subhalaxmi Teleservice</h1>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="product.html"><i class="fas fa-mobile"></i> Products</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <div class="theme-switcher">
+                <button id="themeToggle" class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount">0</span>
+        </div>
+    </nav>
+
+    <main class="home-content">
+        <section class="hero">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="animated-text">Welcome to Subhalaxmi Tele Service</h1>
+                <p class="gradient-text">Your Premium Mobile Phone Destination</p>
+                <div class="cta-buttons">
+                    <a href="product.html" class="cta-button primary">
+                        <span class="button-content">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Shop Now</span>
+                        </span>
+                    </a>
+                    <a href="#contact" class="cta-button secondary glass-effect">
+                        <span class="button-content">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact Us</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <div class="featured-phones-slider" id="featuredPhones">
+                    <!-- Phones will be loaded dynamically -->
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading featured phones...</p>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+            <div class="feature-grid">
+                <div class="feature-card glass-effect" data-aos="flip-left">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable shipping service</p>
+                </div>
+                <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Payment</h3>
+                    <p>Safe and protected transactions</p>
+                </div>
+                <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Always here to help you</p>
+                </div>
+                <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle-free return policy</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Subhalaxmi Tele Service has been your trusted mobile phone retailer since 2010. We offer a wide range of smartphones and accessories with genuine warranty and excellent after-sales service.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Main Street, City, State, PIN</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 1234567890</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@subhalaxmitele.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="product.html">Products</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Saturday: 9:00 AM - 9:00 PM</p>
+                <p>Sunday: 10:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Subhalaxmi Tele Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
