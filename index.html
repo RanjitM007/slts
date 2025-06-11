@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -15,7 +18,8 @@
         </div>
         <div class="nav-brand">
             <i class="fas fa-mobile-alt"></i>
-            <h1>Subhalaxmi Teleservice</h1>
+            <h1><a href="index.html">Subhalaxmi</a></h1>
+            <span class="nav-service-text">TELESERVICE</span>
         </div>
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
@@ -36,103 +40,124 @@
     </nav>
 
     <main class="home-content">
+        <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-content" data-aos="fade-up">
-                <h1 class="animated-text">Welcome to Subhalaxmi Tele Service</h1>
-                <p class="gradient-text">Your Premium Mobile Phone Destination</p>
-                <div class="cta-buttons">
+            <div class="neon-dots"></div>
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title" data-aos="fade-up">
+                    <span class="brand-name">Subhalaxmi</span>
+                    <span class="service-text">TeleService</span>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    MULTI BRAND MOBILE SHOP
+                </p>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
                     <a href="product.html" class="cta-button primary">
-                        <span class="button-content">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span>Shop Now</span>
-                        </span>
-                    </a>
-                    <a href="#contact" class="cta-button secondary glass-effect">
-                        <span class="button-content">
-                            <i class="fas fa-envelope"></i>
-                            <span>Contact Us</span>
-                        </span>
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Explore Phones</span>
                     </a>
                 </div>
             </div>
-            <div class="hero-image" data-aos="fade-left">
-                <div class="featured-phones-slider" id="featuredPhones">
-                    <!-- Phones will be loaded dynamically -->
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        <p>Loading featured phones...</p>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
         </section>
 
-        <section id="features" class="features">
-            <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
-            <div class="feature-grid">
-                <div class="feature-card glass-effect" data-aos="flip-left">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3>Fast Delivery</h3>
-                    <p>Quick and reliable shipping service</p>
-                </div>
-                <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="100">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Secure Payment</h3>
-                    <p>Safe and protected transactions</p>
-                </div>
-                <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Always here to help you</p>
-                </div>
-                <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="300">
-                    <div class="feature-icon">
-                        <i class="fas fa-sync"></i>
-                    </div>
-                    <h3>Easy Returns</h3>
-                    <p>Hassle-free return policy</p>
+        <!-- Featured Phones Section -->
+        <section class="featured-section">
+            <h2 class="section-title" data-aos="fade-up">Featured Phones</h2>
+            <div class="featured-phones-slider" id="featuredPhones">
+                <!-- Loading state -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading featured phones...</p>
                 </div>
             </div>
-        </section>
-
-        <section id="about" class="about">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Subhalaxmi Tele Service has been your trusted mobile phone retailer since 2010. We offer a wide range of smartphones and accessories with genuine warranty and excellent after-sales service.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>123 Main Street, City, State, PIN</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+91 1234567890</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>contact@subhalaxmitele.com</p>
-                    </div>
-                </div>
+            <div class="slider-controls">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
     </main>
+
+    <section id="features" class="features">
+        <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+        <div class="feature-grid">
+            <div class="feature-card glass-effect" data-aos="flip-left">
+                <div class="feature-icon-container">
+                    <div class="road">
+                        <div class="road-line"></div>
+                        <i class="fas fa-truck delivery-truck"></i>
+                    </div>
+                </div>
+                <h3>Fast Delivery</h3>
+                <p>Quick and reliable shipping service</p>
+            </div>
+
+            <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="100">
+                <div class="feature-icon-container">
+                    <i class="fas fa-shield-alt security-shield"></i>
+                </div>
+                <h3>Secure Payment</h3>
+                <p>Safe and protected transactions</p>
+            </div>
+
+            <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="200">
+                <div class="feature-icon-container">
+                    <i class="fas fa-headset support-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Always here to help you</p>
+            </div>
+
+            <div class="feature-card glass-effect" data-aos="flip-left" data-aos-delay="300">
+                <div class="feature-icon-container">
+                    <i class="fas fa-sync returns-icon"></i>
+                </div>
+                <h3>Easy Returns</h3>
+                <p>Hassle-free return policy</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2 class="section-title" data-aos="fade-up">Our Success Story</h2>
+        <div class="stats-grid">
+            <div class="stat-card" data-aos="zoom-in">
+                <div class="stat-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="stat-number" data-value="10000">0</div>
+                <div class="stat-label">Phones Sold</div>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number" data-value="7000">0</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-number" data-value="4.8">0</div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-number" data-value="12">0</div>
+                <div class="stat-label">Years of Service</div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">

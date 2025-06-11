@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
         loadFeaturedPhones();
     }
+
+    animateStatNumbers();
 });
 
 function initializeTheme() {
@@ -67,6 +69,57 @@ async function loadFeaturedPhones() {
             slider.innerHTML = `<p class="error">Failed to load featured phones</p>`;
         }
     }
+}
+
+function displayFeaturedPhones(phones) {
+    const slider = document.getElementById('featuredPhones');
+    if (!slider) return;
+
+    const phonesHTML = phones.map((phone, index) => `
+        <div class="featured-phone ${index === 0 ? 'active' : ''}" data-index="${index}">
+            <div class="phone-image">
+                <img src="${phone.imagelink}" alt="${phone.Model}" loading="lazy">
+                ${phone.Offer > 0 ? 
+                    `<div class="offer-badge">-${phone.Offer * 100}%</div>` : 
+                    ''}
+            </div>
+            <div class="phone-info">
+                <h3>${phone.Model}</h3>
+                <p class="company">${phone.Company}</p>
+                <div class="price-info">
+                    <p class="price">₹${phone.Price.toLocaleString()}</p>
+                    ${phone.Original > phone.Price ? 
+                        `<p class="original-price">₹${phone.Original.toLocaleString()}</p>` : 
+                        ''}
+                </div>
+                <a href="product.html" class="view-more">View Details</a>
+            </div>
+        </div>
+    `).join('');
+
+    slider.innerHTML = phonesHTML;
+
+    // Initialize slider functionality
+    const slides = slider.querySelectorAll('.featured-phone');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Add click handlers for next/prev buttons
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+    }
+
+    // Auto-advance slides
+    setInterval(() => showSlide(currentSlide + 1), 5000);
 }
 
 function initializeFilters() {
@@ -297,4 +350,58 @@ function getStockStatus(status) {
     return status === 'A' ? 
         '<span class="stock-status in-stock"><i class="fas fa-check-circle"></i> In Stock</span>' : 
         '<span class="stock-status out-of-stock"><i class="fas fa-times-circle"></i> Out of Stock</span>';
+}
+
+function animateStatNumbers() {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    const formatNumber = (value) => {
+        if (value >= 1000) {
+            return (value / 1000).toFixed(0) + 'k+';
+        }
+        return value.toString();
+    };
+
+    const animateValue = (element, start, end, duration, hasDecimals) => {
+        let startTimestamp = null;
+        
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            
+            let currentValue = progress * (end - start) + start;
+            if (hasDecimals) {
+                element.textContent = currentValue.toFixed(1);
+            } else {
+                element.textContent = formatNumber(Math.floor(currentValue));
+            }
+            
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        
+        window.requestAnimationFrame(step);
+    };
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const value = parseFloat(target.getAttribute('data-value'));
+                const hasDecimals = value % 1 !== 0;
+                
+                // Different duration for different types of numbers
+                const duration = hasDecimals ? 2000 : 3000;
+                animateValue(target, 0, value, duration, hasDecimals);
+                
+                // Unobserve after animation starts
+                observer.unobserve(target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observe all stat numbers
+    stats.forEach(stat => observer.observe(stat));
 }
